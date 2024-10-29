@@ -1,0 +1,62 @@
+@echo off
+color 2
+chcp 65001 >nul
+:banner
+echo. ╔═╗╔═╗╔═╗╦  ╔═╗╔═╗╔═╗╔╦╗╔═╗
+echo. ║ ╦║╣ ║ ║║  ║ ║║  ╠═╣ ║ ║╣ 
+echo. ╚═╝╚═╝╚═╝╩═╝╚═╝╚═╝╩ ╩ ╩ ╚═╝                                           FROM !!TK!!
+echo.
+echo.
+echo 1) GEOLOCATE!
+echo 2) Exit 
+echo.
+echo.
+echo.║
+set /p op="╚═╝> "
+
+if /i "%op%" EQU == "1" goto geo
+if /i "%op%" EQU == "2" goto exit
+if /i "%op%" NEQ == "1" (
+cls
+color 4
+echo Invalid Option!
+timeout /t 1 >nul
+cls
+color 2
+goto banner
+)
+
+if /i "%op%" NEQ == "2" (
+cls
+color 4
+echo Invalid Option!
+timeout /t 1 >nul
+cls
+color 2
+goto banner
+)
+
+:geo
+cls
+color 1
+echo. ╔═╗╔═╗╔═╗╦  ╔═╗╔═╗╔═╗╔╦╗╔═╗
+echo. ║ ╦║╣ ║ ║║  ║ ║║  ╠═╣ ║ ║╣ 
+echo. ╚═╝╚═╝╚═╝╩═╝╚═╝╚═╝╩ ╩ ╩ ╚═╝                                             FROM !!!!TKMASTER!!!!
+echo.
+echo.
+echo.
+set /p ip="Enter IP: "
+curl https://ipinfo.io/%ip%/json
+echo.
+echo Press Any Key To Continue...
+pause >nul
+cls
+color 2
+goto banner
+
+:exit
+cls
+color 5
+echo GOODBYE!
+timeout /t 2 >nul
+exit
